@@ -24,7 +24,13 @@ const {loading , orders , error} = useSelector((state:any)=> state.Orders)
 
 useEffect(()=> {
 
-
+  const token = localStorage.getItem("token")
+  
+  if (!token) {
+    router.push("/login")
+    return
+  }
+  
   dispatch(fetchOrders()  as any)
 
    setIsMounted(true) // دة بستخدمة في حالة ان داتا اشتغل على براوزير على متصفح مش شغال على سيرفر فقط ساعات سيرفر يضرب ايرور رغم ان بيانات موجودة على متصفح  
@@ -79,6 +85,8 @@ return (
 
       {orders?.length === 0 && (
         <p className="text-center text-[#4B2E2B]">No Orders</p>
+
+
       )}
 
       <AnimatePresence>

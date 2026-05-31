@@ -106,7 +106,24 @@ builder.addCase(fetchOrders.fulfilled , (state , action) => {
 
 state.loading = false 
 
-state.orders = action.payload 
+if(action.payload.message){
+
+state.orders = []
+
+// لو orders فاضية اعرض الرسالة دي
+// {orders?.length === 0 && (
+//   <p className="text-center text-[#4B2E2B]">No Orders</p>
+// )}
+
+
+
+}
+
+else{
+
+ state.orders = action.payload
+
+}
 
 
 })
@@ -115,6 +132,7 @@ builder.addCase(fetchOrders.rejected , (state , action)=> {
 
     state.loading = false 
 
+   
 state.error = action.error.message ?? "Something went wrong"
 
 })
