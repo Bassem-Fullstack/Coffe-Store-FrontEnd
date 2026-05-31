@@ -73,13 +73,13 @@ export default function ReviewsSection() {
             <motion.div
               key={review.id}
 
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 30 }}
 
               whileInView={{ opacity: 1, y: 0 }}
 
               transition={{
                 duration: 0.6,
-                delay: index * 0.2,
+                delay: index * 0.1,
               }}
 
               viewport={{ once: true }}
@@ -156,7 +156,7 @@ export default function ReviewsSection() {
                     whileInView={{ scale: 1 }}
 
                     transition={{
-                      delay: index * 0.19,
+                      delay: index * 0.1,
                       duration : 0.6
                     }}
 
