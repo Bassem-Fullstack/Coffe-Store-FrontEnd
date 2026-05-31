@@ -34,7 +34,7 @@ const token = localStorage.getItem("token")
 
 
   if (!token) {
-    toast.error("Please login first! 🔐")
+    toast.error("Please login register first! 🔐")
     return // وقف الفانكشن
   }
 
