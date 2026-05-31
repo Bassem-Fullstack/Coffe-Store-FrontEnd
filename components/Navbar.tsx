@@ -127,7 +127,7 @@ const handleCartClick = () => {
   
   if (!token) {
     toast.error("Please login or register first! 🔐")
-    router.push("/register")
+  
     return
   }
   
