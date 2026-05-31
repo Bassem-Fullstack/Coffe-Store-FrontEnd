@@ -46,7 +46,7 @@ export default function ReviewsSection() {
         {/* Heading */}
 
         <motion.div
-          initial={{ opacity: 0, y: 100 }}
+          initial={{ opacity: 0, y: 30 }}
 
           whileInView={{ opacity: 1, y: 0 }}
 
@@ -73,7 +73,7 @@ export default function ReviewsSection() {
             <motion.div
               key={review.id}
 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 35 }}
 
               whileInView={{ opacity: 1, y: 0 }}
 
