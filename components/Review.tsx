@@ -50,9 +50,9 @@ export default function ReviewsSection() {
 
           whileInView={{ opacity: 1, y: 0 }}
 
-          transition={{ duration: 0.7 , delay : 0.2 }}
+          transition={{ duration: 0.6 , delay : 0.2 }}
 
-          viewport={{ once: true }}
+          viewport={{ once: true , amount : 0.3 }}
 
           className="mb-14 text-center"
         >
@@ -82,7 +82,7 @@ export default function ReviewsSection() {
                 delay: index * 0.1,
               }}
 
-              viewport={{ once: true }}
+              viewport={{ once: true , amount : 0.3 }}
 
         
               className="
@@ -153,14 +153,15 @@ export default function ReviewsSection() {
 
                     initial={{ scale: 0 }}
 
-                    whileInView={{ scale: 1 }}
+                   
+              whileInView={{ scale: 1}}
 
                     transition={{
                       delay: index * 0.1,
                       duration : 0.6
                     }}
 
-                    viewport={{ once: true }}
+                    viewport={{ once: true , amount : 0.3 }}
                   >
                     <Star
                       size={18}
