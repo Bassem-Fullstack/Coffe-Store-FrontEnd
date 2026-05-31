@@ -24,12 +24,7 @@ const {loading , orders , error} = useSelector((state:any)=> state.Orders)
 
 useEffect(()=> {
 
-  const token = localStorage.getItem("token")
-  
-  if (!token) {
-    router.push("/login")
-    return
-  }
+
   
   dispatch(fetchOrders()  as any)
 
