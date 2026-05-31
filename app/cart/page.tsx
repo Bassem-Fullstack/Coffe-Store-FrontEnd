@@ -31,16 +31,6 @@ export default function CartItems() {
 
   useEffect(() => {
      
-    const token = localStorage.getItem("token")
-
-    if(!token){
-      
-     router.push("/login")
-
-     return;
-
-    } 
-
     dispatch(fetchCart() as any)
   }, [dispatch])
 

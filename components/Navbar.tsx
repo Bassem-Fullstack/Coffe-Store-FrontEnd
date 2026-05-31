@@ -12,21 +12,18 @@ import { useSelector } from "react-redux";
 
 
 import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
-const CartIcon = ({ cartCount }: { cartCount: number }) => (
-
-  <Link href="/cart" className="relative">
-
+const CartIcon = ({ cartCount, onClick }: { cartCount: number, onClick: () => void }) => (
+  <button onClick={onClick} className="relative">
     <i className="fa-solid fa-cart-shopping text-lg" />
-
     {cartCount >= 0 && (
       <span className="absolute -top-3 -right-4 bg-[#C08B5C] text-xs px-2 py-0.5 rounded-full">
         {cartCount}
       </span>
     )}
-  </Link>
-);
-
+  </button>
+)
 export default function Navbar() {
 
   const [user , setUser] = useState<string |null>(null)
@@ -124,6 +121,21 @@ router.push("/")
 }
 
 
+
+const handleCartClick = () => {
+  const token = localStorage.getItem("token")
+  
+  if (!token) {
+    toast.error("Please login or register first! 🔐")
+    router.push("/register")
+    return
+  }
+  
+  router.push("/cart")
+}
+
+
+
 return (
 
     <motion.nav
@@ -178,7 +190,7 @@ return (
 
         <li className="relative z-50">
 
-          <CartIcon cartCount={cartCount} />
+          <CartIcon cartCount={cartCount} onClick={handleCartClick} />
 
         </li>
 
@@ -249,7 +261,7 @@ return (
       {/* Mobile: Cart + Hamburger */}
       <div className="md:hidden flex items-center gap-6">
 
-        <CartIcon cartCount={cartCount} />
+        <CartIcon cartCount={cartCount} onClick={handleCartClick} />
 
         <button
           onClick={() => setMobileOpen(!mobileOpen)}

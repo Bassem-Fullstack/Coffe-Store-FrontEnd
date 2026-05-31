@@ -57,7 +57,7 @@ const handleClick = async (productId : string ) => {
 const token = localStorage.getItem("token")
 
   if (!token) {
-    toast.error(" Please login register first ! 🔐")
+    toast.error(" Please login or register first ! 🔐")
     return // وقف الفانكشن
   }
 
