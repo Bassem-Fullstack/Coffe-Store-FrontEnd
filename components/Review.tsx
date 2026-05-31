@@ -78,7 +78,7 @@ export default function ReviewsSection() {
               whileInView={{ opacity: 1, y: 0 }}
 
               transition={{
-                duration: 0.8,
+                duration: 0.6,
                 delay: index * 0.2,
               }}
 
@@ -157,7 +157,7 @@ export default function ReviewsSection() {
 
                     transition={{
                       delay: index * 0.19,
-                      duration : 0.7
+                      duration : 0.6
                     }}
 
                     viewport={{ once: true }}

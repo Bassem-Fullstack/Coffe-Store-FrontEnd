@@ -45,14 +45,16 @@ categories.map((item , index) => (
 
 key={item._id}
 
- initial={{ opacity: 0, scale: 0.5 }}
+ initial={{ opacity: 0, scale: 0.4 }}
 
 whileInView={{ opacity: 1, scale: 1}}
 
 viewport={{ once: true  , amount : 0.3}}
 
-transition={{ duration: 0.9, delay: index * 0.2 }} // هنا بقولوة كل عنصر يتأخر شواية بسيطة لحد ما عنصر قبلة يطلع
+transition={{ duration: 0.75, delay: index * 0.2 }} // هنا بقولوة كل عنصر يتأخر شواية بسيطة لحد ما عنصر قبلة يطلع
+
 className="w-full sm:w-[45%] lg:w-[30%]"
+
 >
 
 
