@@ -85,8 +85,14 @@ if(!res.ok){
 
 }
 
+// res.status(200).send({
+//   user: { id, email, username, role },  // ← أوبجيكت اسمه user
+//   token باك اند بيرجع الرد كدة هناك في كونتلير بتاع لوجين
+// })
 
 localStorage.setItem("token" , data.token)
+
+localStorage.setItem("user" , data.user.role)
 
 window.location.href="/"
 
