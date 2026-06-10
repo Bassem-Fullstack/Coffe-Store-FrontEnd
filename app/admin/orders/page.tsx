@@ -162,10 +162,21 @@ viewport={{once : true}}
   {/* معلومات الأوردر */}
   <div className="flex flex-wrap gap-3 mb-3
   ">
-    <span className="text-sm bg-[#4B2E2B] text-[#FAF7F0] px-3 py-1 rounded-full">{everyOrder.status}</span>
-    <span className="text-sm bg-[#EADBC8] text-[#4B2E2B] px-3 py-1 rounded-full">{everyOrder.paymentMethod}</span>
+<span className={`text-sm px-3 py-1 rounded-full ${
+  everyOrder.status === "delivered" 
+    ? "bg-green-600 text-white" 
+    : everyOrder.status === "cancelled"
+    ? "bg-red-500 text-white"
+    : "bg-[#4B2E2B] text-[#FAF7F0]"
+    
+}`}> {everyOrder.status}</span>    
+  
+  <span className="text-sm bg-[#EADBC8] text-[#4B2E2B] px-3 py-1 rounded-full">{everyOrder.paymentMethod}</span>
+
     <span className="text-sm bg-[#EADBC8] text-[#4B2E2B] px-3 py-1 rounded-full">{everyOrder.paymentStatus}</span>
+
     <span className="font-bold text-[#4B2E2B]">Total: {everyOrder.totalPrice} EGP</span>
+
   </div>
 
   {/* المنتجات */}
