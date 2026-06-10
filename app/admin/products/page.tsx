@@ -503,7 +503,7 @@ return (
 
  showModle && (
   
-<div className="bg-gradient-to-r from-[#FAF7F0] to-[#EADBC8] fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[50%] overflow-hidden">
+<div className="bg-gradient-to-r from-[#FAF7F0] to-[#EADBC8] fixed z-[9999] top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] md:w-[50%] overflow-hidden">
 
 
 <div className="flex flex-col gap-2 p-3">
