@@ -114,9 +114,13 @@ const handleLogOut = () => {
 
 localStorage.removeItem("token")
 
+ document.cookie = "token=; path=/; max-age=0"
+
+ document.cookie = "role=; path=/; max-age=0"
+
 setUser(null)
 
-router.push("/")
+  window.location.href = "/"
 
 }
 

@@ -7,6 +7,8 @@ import { motion } from "motion/react";
 import { useTypewriter , Cursor } from "react-simple-typewriter";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 export default function HeroSection() {
 
@@ -23,6 +25,26 @@ typeSpeed : 50 ,
 deleteSpeed : 50
 
 })
+
+
+
+const router = useRouter()
+
+
+
+ useEffect(()=> {
+  
+
+  const role = localStorage.getItem("admin")
+  
+   
+  if(role==="admin"){
+
+   router.push("/admin")
+
+  }
+
+ }, [router])
 
 
   return (

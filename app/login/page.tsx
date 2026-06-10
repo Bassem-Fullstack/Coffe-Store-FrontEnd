@@ -9,6 +9,9 @@ import { useTypewriter , Cursor} from "react-simple-typewriter"
 
 import { motion } from "motion/react"
 
+import { Eye , EyeOff } from "lucide-react"
+
+
 export default function Login (){
 
 const [Form , setForm] = useState({
@@ -25,6 +28,7 @@ const [error , setError] = useState("")
 
 const [loading , setLoding] = useState(false) // استخدمنا فولس عشان خاطر لو مستخدم مسجلش لسة دخول لكن لو سجل دخول بنحول الشرط لترو ونستني لحد ما عملية تسجيل دخول تتم دة بنعملوة عشان خاطر مستخدم ممكن يسجل تسجيل دخول مرتين ويطلع ايرورر فبنمنع سلوك زاي دي
 
+const [showedPassword , setShowedPassword] = useState(false)
 
 // const router = useRouter()
 
@@ -92,9 +96,37 @@ if(!res.ok){
 
 localStorage.setItem("token" , data.token)
 
-localStorage.setItem("user" , data.user.role)
+localStorage.setItem("admin" , data.user.role)
 
-window.location.href="/"
+document.cookie = `token=${data.token} ; path=/` // دة بنخزن فية توكين يوسير وتوكين ادمن نفس فكرة بتاع لوكيل ستوريج بس مش نفس طريقة كتابة كلمة path يعني يوصل لكل صفحات
+
+document.cookie = `role=${data.user.role} ; path=/`
+
+// رويل دة اسم مفتاح وتوكين دة اسم مفتاح برضو وقميتة بيساوي داتا يوسير رول او داتا توكين فهمت فكرة
+
+
+
+
+
+if(data.user.role ==="admin") {
+
+
+  // كان ممكن استخدم يوسير راوتير بس مش هتفرق كتير عن دة 
+
+
+  window.location.href = "/admin" // هيروح على فولدر الادمن اللى هو جواة فايل page.tsx
+
+
+}
+
+else{
+
+  window.location.href = "/"  // بنتأكد من رول المستخدم هل هو ادمن اما لاء لو ادمن دخلوة صفحة بتاعنا لو مش ادمن مدخلوش صفحة بتاعنا بس 
+
+}
+
+
+
 
 }
 
@@ -173,14 +205,14 @@ className="w-full bg-[#1a0e0b] border border-[#3d2318] rounded-lg px-3 py-2 text
 
 
 
-<div className="input-email">
+<div className="input-password relative">
 
 <label className="text-[#FAF7F0] text-sm mb-1 block">Password</label>
 
 
 <input 
 
-type="password"
+type={showedPassword ? "text" : "password"}
 
 placeholder="Min 8 chars, A-Z, 0-9, !@#"
 
@@ -193,7 +225,13 @@ className="w-full bg-[#1a0e0b] border border-[#3d2318] rounded-lg px-3 py-2 text
 />
 
 
-</div> {/* input-email */}
+<button type="button" onClick={()=> setShowedPassword(!showedPassword)} className="absolute right-3 top-8">
+
+{showedPassword ? <Eye className="w-4 h-4 text-[#C08B5C]" /> : <EyeOff className="h-4 w-4 text-[#C08B5C]"  />}
+
+</button>
+
+</div> {/* input-password */}
 
 
 <button

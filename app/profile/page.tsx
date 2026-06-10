@@ -6,8 +6,6 @@ import { useEffect, useState } from "react"
 
 import { useRouter } from "next/navigation"
 
-import { useTypewriter  , Cursor} from "react-simple-typewriter"
-
 import Image from "next/image"
 
 export default function ProfilePage () {
@@ -32,19 +30,6 @@ const [user , setUser] = useState <User | null >(null)
 const [loading , setLoading] = useState(true)
 
 
-const [text] = useTypewriter({
-
-words : ["Loading ..."] ,
-
- loop : true ,
-
- delaySpeed : 200 ,
-
- deleteSpeed : 50 ,
-
- typeSpeed : 50
-
-})
 
 
 const router = useRouter()
