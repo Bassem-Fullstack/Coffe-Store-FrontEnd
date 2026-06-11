@@ -98,7 +98,7 @@ export default function CartItems() {
                       transition={{ duration: 0.2 }}
                       className="text-[#C08B5C] font-semibold text-sm mt-1"
                     >
-                      {everyElement.product.price * everyElement.quantity} EGP
+                      {everyElement.product.price * everyElement.quantity}$
                     </motion.p>
                   </div>
 
@@ -179,7 +179,7 @@ export default function CartItems() {
                   transition={{ duration: 0.25 }}
                   className="text-[#4B2E2B] text-xl sm:text-2xl font-semibold"
                 >
-                  {totalPrice} EGP
+                  {totalPrice}$
                 </motion.p>
               </div>
 <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">

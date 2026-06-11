@@ -99,7 +99,7 @@ return (
               <div key={ele._id} className="flex justify-between items-center py-2 border-b border-[#4B2E2B]/10 last:border-0 gap-2">
                 <p className="text-sm font-medium text-[#4B2E2B] flex-1">{ele.product.name}</p>
                 <p className="text-xs text-[#4B2E2B]/60 shrink-0">x{ele.quantity}</p>
-                <p className="text-sm font-medium text-[#C08B5C] shrink-0">{ele.price} EGP</p>
+                <p className="text-sm font-medium text-[#C08B5C] shrink-0">{ele.price}$</p>
               </div>
             ))}
 
