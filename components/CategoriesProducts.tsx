@@ -139,7 +139,7 @@ return(
 
         <h3 className="text-[#4B2E2B] font-bold text-lg line-clamp-1 text-center">{everyProduct.name}</h3>
 
-        <p className="text-[#C08B5C] font-semibold mt-1 text-center"> {everyProduct.price} EGP </p>
+        <p className="text-[#C08B5C] font-semibold mt-1 text-center"> {everyProduct.price} $ </p>
 
      
     

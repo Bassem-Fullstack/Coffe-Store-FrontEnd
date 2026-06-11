@@ -671,7 +671,7 @@ return (
 
 <p className="font-bold text-lg">{item.name}</p>
 
-<p className="text-[#C08B5C]">{item.price}EGP</p>
+<p className="text-[#C08B5C]">{item.price}$</p>
 
 {item.category && <p className="text-sm">{item.category.name}</p>}
 
