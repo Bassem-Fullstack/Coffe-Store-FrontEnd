@@ -122,7 +122,7 @@ className="object-cover hover:scale-110 transition-transform duration-500"
 
 <h2 className="text-[#4B2E2B] text-lg font-semibold text-center line-clamp-1">{product.name}</h2>
 
-<p className="text-[#4B2E2B] font-semibold text-base text-center">{product.price} $ </p>
+<p className="text-[#4B2E2B] font-semibold text-base text-center">{product.price}$ </p>
 
 
 <Link href={`/products/${product._id}`}>

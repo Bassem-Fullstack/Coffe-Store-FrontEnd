@@ -110,7 +110,7 @@ const token = localStorage.getItem("token")
             className="text-[#4B2E2B] text-3xl font-extrabold"
           >
             {product.price}
-            <span className="text-lg font-semibold text-[#C08B5C]"> $ </span>
+            <span className="text-lg font-semibold text-[#C08B5C]">$</span>
           </motion.p>
 
           <motion.hr
