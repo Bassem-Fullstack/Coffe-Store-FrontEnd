@@ -175,7 +175,7 @@ viewport={{once : true}}
 
     <span className="text-sm bg-[#EADBC8] text-[#4B2E2B] px-3 py-1 rounded-full">{everyOrder.paymentStatus}</span>
 
-    <span className="font-bold text-[#4B2E2B]">Total: {everyOrder.totalPrice} EGP</span>
+    <span className="font-bold text-[#4B2E2B]">Total: {everyOrder.totalPrice}$</span>
 
   </div>
 
@@ -184,7 +184,7 @@ viewport={{once : true}}
     <div key={item.product._id} className="flex flex-col md:flex-row md:justify-between items-center bg-[#FAF7F0] rounded-lg gap-2 p-2 mb-4">
       <p className="text-[#4B2E2B] font-medium">{item.product.name}</p>
       <p className="text-sm text-gray-500">x{item.quantity}</p>
-      <p className="text-sm font-bold text-[#C08B5C]">{item.price} EGP</p>
+      <p className="text-sm font-bold text-[#C08B5C]">{item.price}$</p>
     </div>
   ))}
 
